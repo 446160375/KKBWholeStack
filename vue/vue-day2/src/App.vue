@@ -11,6 +11,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  created() {
+    console.log('AppThis:',this)
+    console.log('$store:',this.$store)
+    console.log('$bus:',this.$bus)
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

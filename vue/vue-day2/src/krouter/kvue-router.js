@@ -42,8 +42,10 @@ VueRouter.install = function(Vue) {
   // 1.挂载$router
   Vue.mixin({
     beforeCreate() {
-      // 此处this指的是组件实例
+      // 此处this指的是各各组件实例
+      // console.log(this)
       if (this.$options.router) {
+        // console.log(this)
         Vue.prototype.$router = this.$options.router
       }
     }

@@ -16,6 +16,8 @@ class Store {
       },
     })
 
+    console.log('this._vm:',this._vm)
+
     // 修改this指向
     this.commit = this.commit.bind(this)
     this.dispatch = this.dispatch.bind(this)
@@ -44,7 +46,7 @@ class Store {
       console.error('unknown mutaion');
       return
     }
-
+    console.log('commit.ths:',this)
     // 传入state作为参数
     fn(this.state, payload)
 
@@ -71,7 +73,9 @@ function install(Vue) {
   // 混入
   Vue.mixin({
     beforeCreate() {
+      console.log(this)
       if (this.$options.store) {
+        console.log(this)
         Vue.prototype.$store = this.$options.store
       }
     }
